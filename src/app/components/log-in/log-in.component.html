@@ -1,0 +1,24 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Connexion</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="loginForm.valid && login()">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nom de compte" formControlName="ndc" id="ndc">
+          <mat-error *ngIf="hasError('ndc', 'required')">Nom de compte requis</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Mot de passe" formControlName="passe" id="passe" type="password">
+          <mat-error *ngIf="hasError('passe', 'required')">Mot de passe requis</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <button mat-stroked-button color="accent" class="btn-block">Connexion</button>
+    </form>
+  </mat-card>
+
+</div>

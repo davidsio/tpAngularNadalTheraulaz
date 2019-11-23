@@ -1,0 +1,19 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="app-header">
+
+  <span class="nav-tool-items" *ngIf="checkStorage() == false">
+    <a mat-button routerLink="login" routerLinkActive="active">Connexion</a>
+    <a mat-button routerLink="register">Inscription</a>
+  </span>
+
+  <span class="nav-tool-items" *ngIf="checkStorage() == true">
+    <a mat-button routerLink="account">Mon compte</a>
+    <a mat-button routerLink="account" (click)="disconnect()">Déconnexion</a>
+    <a mat-button>Bienvenue {{ prenom }}</a>
+
+  </span>
+
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>
